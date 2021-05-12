@@ -38,10 +38,14 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        //Detta är koden för att röra på sig
+
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(JumpHeight * -2f * gravity);
         }
+        
+        //Detta är koden för att hoppa
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -56,5 +60,5 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 12f;
         }
-    }
+    } //Detta är koden för att sprinta
 }

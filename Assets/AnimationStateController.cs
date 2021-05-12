@@ -27,7 +27,7 @@ public class AnimationStateController : MonoBehaviour
     bool isGrounded;
     bool ShiftSpeed;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -39,7 +39,7 @@ public class AnimationStateController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -71,8 +71,6 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("IsFalling", false);
         }
-
-
 
 
         if (!IsWalking && forwardpressed)
