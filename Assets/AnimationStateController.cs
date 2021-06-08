@@ -36,7 +36,6 @@ public class AnimationStateController : MonoBehaviour
         IsBackwards = Animator.StringToHash("IsBackwards");
 
         lastY = transform.position.y;
-
     }
 
 

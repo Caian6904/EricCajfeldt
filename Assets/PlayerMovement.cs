@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
     public float JumpHeight = 3f;
-
+    //Detta är values för olika delar av movementet
+    
     public Transform groundCheck;
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
+    //Detta är det som bestämmer när spelaren är på marken
 
     Vector3 velocity;
     bool isGrounded;
@@ -23,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        //Detta är hur spelet detekterar att spelaren är på marken
 
         ShiftSpeed = Input.GetKey("left shift") && (Input.GetKey("w"));
 
@@ -44,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(JumpHeight * -2f * gravity);
         }
-        
-        //Detta är koden för att hoppa
 
         velocity.y += gravity * Time.deltaTime;
 
